@@ -1,0 +1,26 @@
+version: '3'
+services:
+
+  drupal_test:
+    image: drupal:8-apache
+    ports:
+      - 8080:80
+    depends_on:
+      - mysql_drupal
+    links:
+      - mysql_drupal
+    volumes:
+      - "./modules:/opt/drupal/web/modules"
+    
+
+  mysql_drupal:
+    image: mysql:latest
+    ports:
+      - '3306:3306'
+    volumes:
+      - "./db:/var/lib/mysql"
+    environment:
+      MYSQL_USER: user
+      MYSQL_PASSWORD: toor
+      MYSQL_ROOT_PASSWORD: toor
+      MYSQL_DATABASE: drupal

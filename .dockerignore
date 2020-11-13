@@ -1,0 +1,5 @@
+**/node_modules
+node_modules
+node_modules/*
+modules/hello_world/js/node_modules
+db

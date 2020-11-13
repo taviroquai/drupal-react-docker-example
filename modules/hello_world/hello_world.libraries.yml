@@ -1,0 +1,4 @@
+react_app:
+  version: 1.0.0
+  js:
+    js/dist/hello_world.js: {minified: true}

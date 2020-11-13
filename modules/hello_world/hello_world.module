@@ -1,0 +1,11 @@
+<?php
+
+/**
+ * Implements hook_page_attachments_alter().
+ */
+function hello_world_page_attachments_alter(array &$attachments) {
+  if (!in_array('hello_world/react_app', $attachments['#attached']['library'])) {
+    $attachments['#attached']['library'][] = 'hello_world/react_app';
+    //dpm($attachments['#attached']['library']);
+  }
+}
