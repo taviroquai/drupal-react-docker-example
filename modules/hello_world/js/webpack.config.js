@@ -1,3 +1,6 @@
+// TODO: Allow to use production bundle minified
+// Currently, it is necessary to disable minify javascript in drupal Administration
+
 const path = require('path');
  
 const config = {
