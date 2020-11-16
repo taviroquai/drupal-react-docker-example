@@ -6,6 +6,9 @@
             "email": "mafonso333@gmail.com"
         }
     ],
+    "scripts": {
+        "test": "phpunit"
+    },
     "require": {
         "php" : "^7.2"
     },
