@@ -6,7 +6,8 @@
   "scripts": {
     "build": "cross-env NODE_ENV=production webpack",
     "watch": "webpack --watch --progress",
-    "start": "webpack serve"
+    "start": "webpack serve",
+    "test": "jest --coverage"
   },
   "keywords": [],
   "author": "",
@@ -14,17 +15,30 @@
   "devDependencies": {
     "@babel/cli": "^7.12.1",
     "@babel/core": "^7.12.3",
+    "@babel/plugin-transform-runtime": "^7.12.1",
     "@babel/preset-env": "^7.12.1",
     "@babel/preset-react": "^7.12.5",
+    "@testing-library/dom": "^7.26.6",
+    "@testing-library/react": "^11.1.2",
     "babel-loader": "^8.2.1",
     "cross-env": "^7.0.2",
+    "jest": "^26.6.3",
+    "msw": "^0.21.3",
     "webpack": "^5.4.0",
     "webpack-cli": "^4.2.0",
-    "webpack-dev-server": "^3.11.0"
+    "webpack-dev-server": "^3.11.0",
+    "whatwg-fetch": "^3.5.0"
   },
   "dependencies": {
+    "core-js": "^3.7.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx}",
+      "!src/index.js"
+    ]
   },
   "babel": {
     "presets": [
@@ -40,6 +54,9 @@
         }
       ],
       "@babel/preset-react"
+    ],
+    "plugins": [
+      "@babel/transform-runtime"
     ]
   }
 }
